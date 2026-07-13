@@ -1,0 +1,29 @@
+/**
+ * Wrangler configuration for the mcp.joshuamarble.io server directory.
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ *
+ * A tiny static Worker: it claims the catch-all `mcp.joshuamarble.io/*`
+ * route, so it serves the hostname root (a directory of all hosted MCP
+ * servers) and any path no server has claimed. Each MCP server's own
+ * `mcp.joshuamarble.io/<name>*` route is more specific and takes precedence.
+ *
+ * The hostname's Custom Domain (DNS + cert anchor) stays attached to the
+ * seats-aero-mcp Worker; this Worker only needs the route.
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mcp-directory",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-06-11",
+  "observability": {
+    "enabled": true
+  },
+  // Keep the workers.dev URL as a secondary endpoint alongside the route.
+  "workers_dev": true,
+  "routes": [
+    {
+      "pattern": "mcp.joshuamarble.io/*",
+      "zone_name": "joshuamarble.io"
+    }
+  ]
+}
