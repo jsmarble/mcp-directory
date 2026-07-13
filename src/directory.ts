@@ -31,7 +31,7 @@ export const SERVERS: McpServerEntry[] = [
     path: "/tripit",
     description:
       "TripIt travel management — list and manage trips, flights, hotels, car rentals, activities, flight status, and loyalty programs.",
-    auth: "X-TripIt-Consumer-Key/-Consumer-Secret/-Access-Token/-Access-Token-Secret headers (your TripIt OAuth 1.0 values)",
+    auth: "Sign in at /tripit/connect to get your token headers (no OAuth knowledge needed); or bring your own TripIt app via the four X-TripIt-* headers",
     repo: "https://github.com/jsmarble/tripit-mcp",
   },
 ];
