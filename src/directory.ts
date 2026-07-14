@@ -27,11 +27,11 @@ export const SERVERS: McpServerEntry[] = [
     repo: "https://github.com/jsmarble/seats-aero-mcp",
   },
   {
-    name: "TripIt",
+    name: "TripIt (parked)",
     path: "/tripit",
     description:
-      "TripIt travel management — list and manage trips, flights, hotels, car rentals, activities, flight status, and loyalty programs.",
-    auth: "Sign in at /tripit/connect to get your token headers (no OAuth knowledge needed); or bring your own TripIt app via the four X-TripIt-* headers",
+      "TripIt travel management — list and manage trips, flights, hotels, car rentals, activities, flight status, and loyalty programs. PARKED: TripIt closed its public API to new integrations in 2026, so credentials can no longer be obtained; usable only with a legacy consumer key.",
+    auth: "Legacy TripIt OAuth 1.0 consumer key required (no new keys are issued by TripIt); send the four X-TripIt-* headers. See the repo.",
     repo: "https://github.com/jsmarble/tripit-mcp",
   },
 ];
